@@ -1,7 +1,7 @@
 # 开发环境配置
 server:
   # 服务器的HTTP端口，默认为80
-  port: 8180
+  port: 9001
   servlet:
     # 应用的访问路径
     context-path: /
@@ -18,10 +18,18 @@ spring:
     name: nacos-payment-provider
   cloud:
     nacos:
+      server-addr: 127.0.0.1:8848
+        file-extension: yml
+        namespace: 7d3e5f19-a102-471a-b6e0-67bd7d1d35f3
+        group: USER_GROUP
       discovery:
-        server-addr: localhost:8848
+          server-addr: localhost:8848
+          namespace: 7d3e5f19-a102-471a-b6e0-67bd7d1d35f3
+
 management:
   endpoints:
     web:
       exposure:
         include: '*'
+
+
